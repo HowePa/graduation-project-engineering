@@ -1,0 +1,262 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "short_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "web-management-system"
+        },
+        "major": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "short_name",
+        "type",
+        "major"
+      ]
+    },
+    "student": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "student_id": {
+          "type": "string"
+        },
+        "class_name": {
+          "type": "string"
+        },
+        "supervisor": {
+          "type": "string"
+        },
+        "school": {
+          "type": "string"
+        }
+      },
+      "required": []
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "frontend": {
+          "const": "Vue3"
+        },
+        "backend": {
+          "const": "Spring Boot"
+        },
+        "database": {
+          "const": "MySQL"
+        },
+        "orm": {
+          "const": "MyBatis-Plus"
+        },
+        "deployment": {
+          "const": "Docker"
+        }
+      },
+      "required": [
+        "frontend",
+        "backend",
+        "database",
+        "orm",
+        "deployment"
+      ]
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "features": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "acceptance": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "roles",
+          "acceptance"
+        ]
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frontend": {
+          "type": "string",
+          "minLength": 1
+        },
+        "database": {
+          "type": "string",
+          "minLength": 1
+        },
+        "compose": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "backend",
+        "frontend",
+        "database",
+        "compose"
+      ]
+    },
+    "development": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "const": "runnable-demo"
+        },
+        "complexity": {
+          "const": "undergraduate"
+        },
+        "security_level": {
+          "const": "basic"
+        },
+        "docker_preferred": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "target",
+        "complexity",
+        "security_level",
+        "docker_preferred"
+      ]
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "auto_approve_gates": {
+          "type": "boolean"
+        },
+        "test_command": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "test_cwd": {
+          "type": "string",
+          "minLength": 1
+        },
+        "test_report_glob": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3600
+        }
+      },
+      "required": [
+        "auto_approve_gates",
+        "test_command",
+        "test_cwd",
+        "test_report_glob",
+        "timeout_seconds"
+      ]
+    },
+    "thesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "const": "zh-CN"
+        },
+        "chapters": {
+          "const": 5
+        },
+        "template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "references_min": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "language",
+        "chapters",
+        "template",
+        "references_min"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "project",
+    "student",
+    "system",
+    "roles",
+    "features",
+    "paths",
+    "development",
+    "workflow",
+    "thesis"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gpe:project:1.0"
+}

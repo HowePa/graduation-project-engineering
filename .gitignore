@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+examples/**/evidence/
+examples/**/artifacts/
+examples/**/.project-state.json
+examples/**/target/

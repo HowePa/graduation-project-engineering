@@ -1,0 +1,141 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "theme": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "surface": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "text": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      },
+      "required": [
+        "name",
+        "primary",
+        "background",
+        "surface",
+        "text"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sidebar": {
+          "enum": [
+            "collapsible",
+            "narrow",
+            "dark",
+            "standard"
+          ]
+        },
+        "header": {
+          "type": "boolean"
+        },
+        "breadcrumb": {
+          "type": "boolean"
+        },
+        "content_width": {
+          "enum": [
+            "fluid",
+            "fixed"
+          ]
+        }
+      },
+      "required": [
+        "sidebar",
+        "header",
+        "breadcrumb",
+        "content_width"
+      ]
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "border_radius": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 32
+        },
+        "shadow": {
+          "enum": [
+            "none",
+            "light",
+            "medium"
+          ]
+        },
+        "table_density": {
+          "enum": [
+            "compact",
+            "normal",
+            "comfortable"
+          ]
+        },
+        "form_mode": {
+          "enum": [
+            "drawer",
+            "modal",
+            "page"
+          ]
+        }
+      },
+      "required": [
+        "border_radius",
+        "shadow",
+        "table_density",
+        "form_mode"
+      ]
+    },
+    "dashboard": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cards": {
+          "type": "boolean"
+        },
+        "charts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "bar",
+              "line",
+              "pie",
+              "area"
+            ]
+          }
+        }
+      },
+      "required": [
+        "cards",
+        "charts"
+      ]
+    }
+  },
+  "required": [
+    "theme",
+    "layout",
+    "components",
+    "dashboard"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

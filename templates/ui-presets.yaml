@@ -1,0 +1,123 @@
+{
+  "recommended": [
+    "A",
+    "C",
+    "D"
+  ],
+  "presets": {
+    "A": {
+      "theme": {
+        "name": "蓝白科研管理风",
+        "primary": "#2563EB",
+        "background": "#F5F7FA",
+        "surface": "#FFFFFF",
+        "text": "#1F2937"
+      },
+      "layout": {
+        "sidebar": "collapsible",
+        "header": true,
+        "breadcrumb": true,
+        "content_width": "fluid"
+      },
+      "components": {
+        "border_radius": 8,
+        "shadow": "light",
+        "table_density": "normal",
+        "form_mode": "drawer"
+      },
+      "dashboard": {
+        "cards": true,
+        "charts": [
+          "bar",
+          "line",
+          "pie"
+        ]
+      }
+    },
+    "B": {
+      "theme": {
+        "name": "青绿轻商务风",
+        "primary": "#0F766E",
+        "background": "#F8FAFC",
+        "surface": "#FFFFFF",
+        "text": "#1E293B"
+      },
+      "layout": {
+        "sidebar": "narrow",
+        "header": true,
+        "breadcrumb": true,
+        "content_width": "fluid"
+      },
+      "components": {
+        "border_radius": 8,
+        "shadow": "light",
+        "table_density": "comfortable",
+        "form_mode": "drawer"
+      },
+      "dashboard": {
+        "cards": true,
+        "charts": [
+          "bar",
+          "line"
+        ]
+      }
+    },
+    "C": {
+      "theme": {
+        "name": "深蓝灰专业风",
+        "primary": "#1E3A8A",
+        "background": "#F3F4F6",
+        "surface": "#FFFFFF",
+        "text": "#111827"
+      },
+      "layout": {
+        "sidebar": "dark",
+        "header": true,
+        "breadcrumb": true,
+        "content_width": "fluid"
+      },
+      "components": {
+        "border_radius": 8,
+        "shadow": "none",
+        "table_density": "compact",
+        "form_mode": "drawer"
+      },
+      "dashboard": {
+        "cards": true,
+        "charts": [
+          "bar",
+          "line"
+        ]
+      }
+    },
+    "D": {
+      "theme": {
+        "name": "现代紫色数据风",
+        "primary": "#7C3AED",
+        "background": "#F8F7FC",
+        "surface": "#FFFFFF",
+        "text": "#1F2937"
+      },
+      "layout": {
+        "sidebar": "standard",
+        "header": true,
+        "breadcrumb": true,
+        "content_width": "fluid"
+      },
+      "components": {
+        "border_radius": 8,
+        "shadow": "light",
+        "table_density": "normal",
+        "form_mode": "drawer"
+      },
+      "dashboard": {
+        "cards": true,
+        "charts": [
+          "bar",
+          "area",
+          "pie"
+        ]
+      }
+    }
+  }
+}

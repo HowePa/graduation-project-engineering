@@ -1,0 +1,1 @@
+-- 创建库由 Compose MYSQL_DATABASE 完成；表结构只维护在 schema.sql。

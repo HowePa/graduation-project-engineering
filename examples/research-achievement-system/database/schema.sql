@@ -1,0 +1,17 @@
+CREATE TABLE sys_user (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '用户ID',
+  username VARCHAR(64) NOT NULL COMMENT '登录名',
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(32) NOT NULL,
+  UNIQUE KEY uk_username (username)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='系统用户';
+CREATE TABLE achievement (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  owner_id BIGINT NOT NULL,
+  title VARCHAR(200) NOT NULL,
+  status VARCHAR(32) NOT NULL DEFAULT 'DRAFT',
+  review_comment VARCHAR(500) NULL DEFAULT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_owner FOREIGN KEY (owner_id) REFERENCES sys_user (id),
+  KEY idx_owner_status (owner_id, status)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='科研成果';

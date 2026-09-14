@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "format": {
+    "font_zh": "宋体",
+    "font_latin": "Times New Roman",
+    "heading_font": "黑体",
+    "body_pt": 12,
+    "heading_pt": [
+      18,
+      15,
+      14
+    ],
+    "line_spacing": 1.2,
+    "margins_cm": {
+      "top": 2.5,
+      "bottom": 2.5,
+      "left": 3,
+      "right": 2.5
+    },
+    "header": "",
+    "figure_number": "图 {chapter}-{index}",
+    "table_number": "表 {chapter}-{index}",
+    "toc_levels": 2
+  },
+  "references": {
+    "minimum": 15,
+    "journals": 8,
+    "foreign": 2,
+    "dissertations": 1,
+    "books": 1,
+    "recent_years": 5,
+    "recent_ratio": 0.5
+  }
+}

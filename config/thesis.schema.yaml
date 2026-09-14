@@ -1,0 +1,166 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "font_zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "font_latin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "heading_font": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "heading_pt": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "line_spacing": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "margins_cm": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "top": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "bottom": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "left": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "right": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ]
+        },
+        "header": {
+          "type": "string"
+        },
+        "figure_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "table_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "toc_levels": {
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "required": [
+        "font_zh",
+        "font_latin",
+        "heading_font",
+        "body_pt",
+        "heading_pt",
+        "line_spacing",
+        "margins_cm",
+        "header",
+        "figure_number",
+        "table_number",
+        "toc_levels"
+      ]
+    },
+    "references": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minimum": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "journals": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "foreign": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dissertations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "books": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recent_years": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "recent_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "minimum",
+        "journals",
+        "foreign",
+        "dissertations",
+        "books",
+        "recent_years",
+        "recent_ratio"
+      ]
+    },
+    "template": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "format",
+    "references"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

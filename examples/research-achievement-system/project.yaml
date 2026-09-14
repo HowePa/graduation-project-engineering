@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "title": "高校科研成果管理系统设计与实现",
+    "short_name": "科研成果管理系统",
+    "type": "web-management-system",
+    "major": "计算机科学与技术"
+  },
+  "student": {},
+  "system": {
+    "frontend": "Vue3",
+    "backend": "Spring Boot",
+    "database": "MySQL",
+    "orm": "MyBatis-Plus",
+    "deployment": "Docker"
+  },
+  "roles": [
+    "教师",
+    "科研秘书",
+    "管理员"
+  ],
+  "features": [
+    {
+      "id": "achievement-draft",
+      "name": "教师成果草稿管理",
+      "roles": [
+        "教师"
+      ],
+      "acceptance": [
+        "标题不能为空",
+        "只有本人可修改草稿"
+      ]
+    },
+    {
+      "id": "achievement-review",
+      "name": "科研成果提交与审核",
+      "roles": [
+        "教师",
+        "科研秘书"
+      ],
+      "acceptance": [
+        "草稿可提交",
+        "秘书只能审核已提交成果",
+        "教师不能审核"
+      ]
+    },
+    {
+      "id": "user-management",
+      "name": "用户管理",
+      "roles": [
+        "管理员"
+      ],
+      "acceptance": [
+        "仅管理员可维护用户"
+      ]
+    }
+  ],
+  "paths": {
+    "backend": "backend",
+    "frontend": "frontend",
+    "database": "database",
+    "compose": "docker-compose.yml"
+  },
+  "development": {
+    "target": "runnable-demo",
+    "complexity": "undergraduate",
+    "security_level": "basic",
+    "docker_preferred": true
+  },
+  "workflow": {
+    "auto_approve_gates": false,
+    "test_command": [
+      "python3",
+      "tests/run_domain_tests.py",
+      "{report_dir}"
+    ],
+    "test_cwd": ".",
+    "test_report_glob": "artifacts/test-runs/{run_id}/junit.xml",
+    "timeout_seconds": 120
+  },
+  "thesis": {
+    "language": "zh-CN",
+    "chapters": 5,
+    "template": "templates/thesis-template.docx",
+    "references_min": 15
+  }
+}

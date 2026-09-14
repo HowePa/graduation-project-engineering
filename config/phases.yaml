@@ -1,0 +1,84 @@
+{
+  "1": {
+    "name": "需求与总体设计",
+    "workflows": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "artifacts": [
+      "docs/01-project-overview.md",
+      "docs/02-requirement-analysis.md",
+      "docs/03-system-design.md",
+      "docs/04-database-design.md",
+      "docs/05-api-design.md",
+      "artifacts/diagrams/draft/function-structure.mmd",
+      "artifacts/diagrams/draft/use-cases.mmd",
+      "artifacts/diagrams/draft/business-flow.mmd",
+      "artifacts/diagrams/draft/architecture.mmd",
+      "artifacts/diagrams/draft/er-diagram.mmd"
+    ]
+  },
+  "2": {
+    "name": "UI 与实现计划",
+    "workflows": [],
+    "artifacts": [
+      "ui-design.yaml",
+      "docs/06-implementation-plan.md"
+    ]
+  },
+  "3": {
+    "name": "系统实现",
+    "workflows": [
+      "05"
+    ],
+    "artifacts": [
+      "docs/runtime-acceptance.md"
+    ]
+  },
+  "4": {
+    "name": "测试与论文证据",
+    "workflows": [
+      "06",
+      "07",
+      "08",
+      "09"
+    ],
+    "artifacts": [
+      "docs/test-report.md",
+      "evidence/manifest.json",
+      "evidence/test-results.json",
+      "evidence/screenshots.json",
+      "evidence/diagrams.json"
+    ]
+  },
+  "5": {
+    "name": "论文方案与格式",
+    "workflows": [
+      "10"
+    ],
+    "artifacts": [
+      ".thesis-template-lock.yaml",
+      "thesis-runtime.yaml",
+      "thesis/outline.md",
+      "docs/thesis-material-plan.md"
+    ]
+  },
+  "6": {
+    "name": "论文生成与最终校验",
+    "workflows": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "artifacts": [
+      "thesis/thesis.md",
+      "thesis/毕业论文.docx",
+      "artifacts/consistency-report.json",
+      "artifacts/docx-review.md"
+    ]
+  }
+}
